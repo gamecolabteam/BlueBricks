@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=4 uid="uid://ddlon872bk1tw"]
 
-[ext_resource type="Texture2D" uid="uid://nb5flkdfxi5o" path="res://art/test-tile.png" id="1_ecglm"]
-[ext_resource type="PackedScene" uid="uid://m2mfohexnxgv" path="res://characters/player.tscn" id="2_oruat"]
+[ext_resource type="Texture2D" uid="uid://nb5flkdfxi5o" path="res://assets/tilesets/test-tile.png" id="1_u2iws"]
+[ext_resource type="PackedScene" uid="uid://m2mfohexnxgv" path="res://scenes/player/player.tscn" id="2_2apt5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oruat"]
-texture = ExtResource("1_ecglm")
+texture = ExtResource("1_u2iws")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
@@ -18,5 +18,5 @@ sources/0 = SubResource("TileSetAtlasSource_oruat")
 tile_map_data = PackedByteArray("AAD8/wMAAAAAAAAAAAD9/wMAAAAAAAAAAAD+/wMAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAAMAAMAAAAAAAAAAAANAAMAAAAAAAAAAAAOAAMAAAAAAAAAAAAPAAMAAAAAAAAAAAAQAAMAAAAAAAAAAAARAAMAAAAAAAAAAAASAAMAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAALAP3/AAAAAAAAAAAMAP3/AAAAAAAAAAANAP3/AAAAAAAAAAAOAP3/AAAAAAAAAAAUAAUAAAAAAAAAAAAVAAUAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_a8x6c")
 
-[node name="Player" parent="." instance=ExtResource("2_oruat")]
+[node name="Player" parent="." instance=ExtResource("2_2apt5")]
 position = Vector2(9, 31)
