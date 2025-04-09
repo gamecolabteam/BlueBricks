@@ -1,3 +1,4 @@
+## Base level
 class_name Level extends Node2D
 
 
@@ -11,10 +12,10 @@ const BASE_CENTER: Vector2 = Vector2(320., 180.)
 
 
 func _physics_process(_delta: float) -> void:
-	side_scroll.call_deferred()
+	_side_scroll.call_deferred()
 
 
-func side_scroll():
+func _side_scroll():
 	var motion = player.global_position - BASE_CENTER
 	player.global_position = BASE_CENTER
 	
