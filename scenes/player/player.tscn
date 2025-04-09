@@ -10,6 +10,7 @@ radius = 8.0
 script = ExtResource("2_3eadt")
 
 [node name="Test-character" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("1_dnjla")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -17,3 +18,4 @@ position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_3eadt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
