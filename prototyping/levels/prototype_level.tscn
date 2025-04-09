@@ -1,18 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://ch6doisvdpt1x"]
+[gd_scene load_steps=2 format=3 uid="uid://ch6doisvdpt1x"]
 
 [ext_resource type="PackedScene" uid="uid://r6a8dhob26ky" path="res://base/scenes/level.tscn" id="1_v40lf"]
-[ext_resource type="Texture2D" uid="uid://nb5flkdfxi5o" path="res://assets/tilesets/test-tile.png" id="2_4i56n"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u0qag"]
-texture = ExtResource("2_4i56n")
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-
-[sub_resource type="TileSet" id="TileSet_saugi"]
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_u0qag")
 
 [node name="PrototypeLevel" instance=ExtResource("1_v40lf")]
-
-[node name="Level" parent="." index="1"]
-tile_set = SubResource("TileSet_saugi")

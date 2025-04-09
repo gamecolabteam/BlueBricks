@@ -1,18 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://r6a8dhob26ky"]
+[gd_scene load_steps=5 format=3 uid="uid://r6a8dhob26ky"]
 
 [ext_resource type="Script" uid="uid://j0klf6v8tk7c" path="res://base/scripts/level.gd" id="1_1nuqq"]
 [ext_resource type="Texture2D" uid="uid://52l12klwbbla" path="res://icon.svg" id="1_c6y4m"]
-[ext_resource type="Texture2D" uid="uid://nb5flkdfxi5o" path="res://assets/tilesets/test-tile.png" id="2_1nuqq"]
 [ext_resource type="PackedScene" uid="uid://m2mfohexnxgv" path="res://scenes/player/player.tscn" id="3_wyojl"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n35jb"]
-texture = ExtResource("2_1nuqq")
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-
-[sub_resource type="TileSet" id="TileSet_n26iv"]
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_n35jb")
+[ext_resource type="PackedScene" uid="uid://bdiht543o1nru" path="res://base/scenes/chunk_manager.tscn" id="5_wyojl"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_1nuqq")
@@ -26,11 +17,8 @@ texture_filter = 1
 position = Vector2(320, 180)
 texture = ExtResource("1_c6y4m")
 
-[node name="Level" type="TileMapLayer" parent="."]
-unique_name_in_owner = true
-texture_filter = 1
-tile_map_data = PackedByteArray("AAAJAA0AAAAAAAAAAAAKAA0AAAAAAAAAAAALAA0AAAAAAAAAAAAMAA0AAAAAAAAAAAANAA0AAAAAAAAAAAAOAA0AAAAAAAAAAAAPAA0AAAAAAAAAAAAQAA0AAAAAAAAAAAARAA0AAAAAAAAAAAASAA0AAAAAAAAAAAATAA0AAAAAAAAAAAAUAA0AAAAAAAAAAAAVAA0AAAAAAAAAAAAWAA0AAAAAAAAAAAAXAA0AAAAAAAAAAAAYAA0AAAAAAAAAAAAZAA0AAAAAAAAAAAAaAA0AAAAAAAAAAAAbAA0AAAAAAAAAAAAcAA0AAAAAAAAAAAAdAA0AAAAAAAAAAAAQAAkAAAAAAAAAAAARAAkAAAAAAAAAAAASAAkAAAAAAAAAAAATAAkAAAAAAAAAAAAUAAkAAAAAAAAAAAAZAAYAAAAAAAAAAAAaAAYAAAAAAAAAAAAbAAYAAAAAAAAAAAAcAAYAAAAAAAAAAAAfAA4AAAAAAAAAAAAgAA4AAAAAAAAAAAAhAA4AAAAAAAAAAAAiAA4AAAAAAAAAAAAjAA4AAAAAAAAAAAAkAA4AAAAAAAAAAAAlAA4AAAAAAAAAAAAmAA4AAAAAAAAAAAAnAA4AAAAAAAAAAAAIAA4AAAAAAAAAAAAHAA4AAAAAAAAAAAAGAA4AAAAAAAAAAAAFAA4AAAAAAAAAAAAEAA4AAAAAAAAAAAADAA4AAAAAAAAAAAACAA4AAAAAAAAAAAABAA4AAAAAAAAAAAAAAA4AAAAAAAAAAAAeAA4AAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_n26iv")
+[node name="ChunkManager" parent="." instance=ExtResource("5_wyojl")]
+position = Vector2(320, 180)
 
 [node name="Player" parent="." instance=ExtResource("3_wyojl")]
 unique_name_in_owner = true

@@ -23,6 +23,13 @@ window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
 
+[file_customization]
+
+folder_colors={
+"res://base/": "gray",
+"res://levels/": "blue"
+}
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
