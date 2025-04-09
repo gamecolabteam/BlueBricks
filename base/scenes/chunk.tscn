@@ -1,10 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://dcbbrxgjnfnu2"]
+[gd_scene load_steps=5 format=4 uid="uid://dcbbrxgjnfnu2"]
 
 [ext_resource type="Script" uid="uid://dguqm4aunjhyq" path="res://base/scripts/chunk.gd" id="1_a8uqp"]
 [ext_resource type="Texture2D" uid="uid://nb5flkdfxi5o" path="res://assets/tilesets/test-tile.png" id="2_iqn28"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8uqp"]
-size = Vector2(640, 360)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n35jb"]
 texture = ExtResource("2_iqn28")
@@ -17,11 +14,6 @@ sources/0 = SubResource("TileSetAtlasSource_n35jb")
 
 [node name="Chunk" type="Node2D"]
 script = ExtResource("1_a8uqp")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_a8uqp")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAATAAMAAAAAAAAAAAASAAMAAAAAAAAAAAARAAMAAAAAAAAAAAAQAAMAAAAAAAAAAAAPAAMAAAAAAAAAAAAOAAMAAAAAAAAAAAANAAMAAAAAAAAAAAAMAAMAAAAAAAAAAAALAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAADAAMAAAAAAAAAAAACAAMAAAAAAAAAAAABAAMAAAAAAAAAAAAAAAMAAAAAAAAAAAD//wQAAAAAAAAAAAD+/wQAAAAAAAAAAAD9/wQAAAAAAAAAAAD8/wQAAAAAAAAAAAD7/wQAAAAAAAAAAAD6/wQAAAAAAAAAAAD5/wQAAAAAAAAAAAD4/wQAAAAAAAAAAAD3/wQAAAAAAAAAAAD2/wQAAAAAAAAAAAD1/wQAAAAAAAAAAAD0/wQAAAAAAAAAAADz/wQAAAAAAAAAAADy/wQAAAAAAAAAAADx/wQAAAAAAAAAAADw/wQAAAAAAAAAAADv/wQAAAAAAAAAAADu/wQAAAAAAAAAAADt/wQAAAAAAAAAAADs/wQAAAAAAAAAAAA=")

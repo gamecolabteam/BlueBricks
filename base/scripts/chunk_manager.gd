@@ -1,7 +1,11 @@
+## Manages [Chunk]s. Instantiating and freeing them as needed.
 class_name ChunkManager extends Node2D
 
 
+## Current center-most [Chunk]
 var center_chunk: ChunkInfo
+## The file names for each [Chunk].[br]
+## From res://chunks
 var chunk_files: PackedStringArray
 
 
@@ -61,6 +65,7 @@ func _ready() -> void:
 	center_chunk = ci
 
 
+## Creates a [ChunkInfo] for the given [param chunk].
 func create_chunk_info(chunk: Chunk) -> ChunkInfo:
 	var i = ChunkInfo.new()
 	i.chunk = chunk
@@ -69,6 +74,8 @@ func create_chunk_info(chunk: Chunk) -> ChunkInfo:
 	return i
 
 
+## Instantiates a [Chunk] with the given [param chunk_file_path].[br]
+## If no file path is provided, instantiates a random chunk from [member chunk_files].
 func instantiate_chunk(chunk_file_path: String = "") -> Chunk:
 	if chunk_file_path.is_empty():
 		var fi = randi_range(0, chunk_files.size() - 1)
@@ -78,6 +85,8 @@ func instantiate_chunk(chunk_file_path: String = "") -> Chunk:
 	return c
 
 
+## Loads the chunk from the given [param chunk_info].[br]
+## Returns a new [ChunkInfo] with a random [Chunk] if [param chunk_info] is null.
 func load_chunk(chunk_info: ChunkInfo) -> ChunkInfo:
 	if not chunk_info: chunk_info = ChunkInfo.new()
 	
@@ -89,6 +98,7 @@ func load_chunk(chunk_info: ChunkInfo) -> ChunkInfo:
 	return chunk_info
 
 
+## Unloads [param chunk_info] and frees [member ChunkInfo.chunk].
 func unload_chunk(chunk_info: ChunkInfo):
 	chunk_info.chunk.queue_free()
 	chunk_info.loaded = false
