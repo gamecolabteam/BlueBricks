@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://r6a8dhob26ky"]
+
+[ext_resource type="Script" uid="uid://j0klf6v8tk7c" path="res://base/scripts/level.gd" id="1_1nuqq"]
+[ext_resource type="Texture2D" uid="uid://52l12klwbbla" path="res://icon.svg" id="1_c6y4m"]
+[ext_resource type="PackedScene" uid="uid://m2mfohexnxgv" path="res://scenes/player/player.tscn" id="3_wyojl"]
+[ext_resource type="Script" uid="uid://bu83an7tvdm66" path="res://scripts/camera_follow.gd" id="4_wyojl"]
+[ext_resource type="PackedScene" uid="uid://bdiht543o1nru" path="res://base/scenes/chunk_manager.tscn" id="5_wyojl"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_1nuqq")
+
+[node name="Background" type="Parallax2D" parent="."]
+unique_name_in_owner = true
+repeat_size = Vector2(640, 360)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+texture_filter = 1
+position = Vector2(320, 180)
+texture = ExtResource("1_c6y4m")
+
+[node name="Scroll" type="Node2D" parent="."]
+
+[node name="ChunkManager" parent="Scroll" instance=ExtResource("5_wyojl")]
+position = Vector2(320, 180)
+
+[node name="Camera2D" type="Camera2D" parent="Scroll" node_paths=PackedStringArray("target")]
+position = Vector2(320, 180)
+zoom = Vector2(2, 2)
+script = ExtResource("4_wyojl")
+target = NodePath("../../Player")
+
+[node name="Player" parent="." instance=ExtResource("3_wyojl")]
+unique_name_in_owner = true
+position = Vector2(320, 180)

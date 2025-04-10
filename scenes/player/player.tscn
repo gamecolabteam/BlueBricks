@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://m2mfohexnxgv"]
+
+[ext_resource type="Script" uid="uid://rwtdb76nno2d" path="res://scripts/player/player.gd" id="2_3eadt"]
+[ext_resource type="SpriteFrames" uid="uid://c8gl7pdeihyte" path="res://sprite_frames/penguin.tres" id="2_gmlin"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p47bc"]
+size = Vector2(10, 16)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("2_3eadt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_p47bc")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = ExtResource("2_gmlin")
+animation = &"glide"
+frame_progress = 0.892903
+offset = Vector2(0, -8)

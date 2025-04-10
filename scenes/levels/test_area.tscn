@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=4 uid="uid://ddlon872bk1tw"]
+
+[ext_resource type="Texture2D" uid="uid://52l12klwbbla" path="res://icon.svg" id="1_2apt5"]
+[ext_resource type="Texture2D" uid="uid://nb5flkdfxi5o" path="res://assets/tilesets/test-tile.png" id="1_u2iws"]
+[ext_resource type="PackedScene" uid="uid://m2mfohexnxgv" path="res://scenes/player/player.tscn" id="2_2apt5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2apt5"]
+texture = ExtResource("1_u2iws")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_a8x6c"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_2apt5")
+
+[node name="TestArea" type="Node2D"]
+
+[node name="Background" type="Parallax2D" parent="."]
+unique_name_in_owner = true
+repeat_size = Vector2(640, 360)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(320, 180)
+texture = ExtResource("1_2apt5")
+
+[node name="Level" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray("AAAJAA0AAAAAAAAAAAAKAA0AAAAAAAAAAAALAA0AAAAAAAAAAAAMAA0AAAAAAAAAAAANAA0AAAAAAAAAAAAOAA0AAAAAAAAAAAAPAA0AAAAAAAAAAAAQAA0AAAAAAAAAAAARAA0AAAAAAAAAAAASAA0AAAAAAAAAAAATAA0AAAAAAAAAAAAUAA0AAAAAAAAAAAAVAA0AAAAAAAAAAAAWAA0AAAAAAAAAAAAXAA0AAAAAAAAAAAAYAA0AAAAAAAAAAAAZAA0AAAAAAAAAAAAaAA0AAAAAAAAAAAAbAA0AAAAAAAAAAAAcAA0AAAAAAAAAAAAdAA0AAAAAAAAAAAAQAAkAAAAAAAAAAAARAAkAAAAAAAAAAAASAAkAAAAAAAAAAAATAAkAAAAAAAAAAAAUAAkAAAAAAAAAAAAZAAYAAAAAAAAAAAAaAAYAAAAAAAAAAAAbAAYAAAAAAAAAAAAcAAYAAAAAAAAAAAAfAA4AAAAAAAAAAAAgAA4AAAAAAAAAAAAhAA4AAAAAAAAAAAAiAA4AAAAAAAAAAAAjAA4AAAAAAAAAAAAkAA4AAAAAAAAAAAAlAA4AAAAAAAAAAAAmAA4AAAAAAAAAAAAnAA4AAAAAAAAAAAAIAA4AAAAAAAAAAAAHAA4AAAAAAAAAAAAGAA4AAAAAAAAAAAAFAA4AAAAAAAAAAAAEAA4AAAAAAAAAAAADAA4AAAAAAAAAAAACAA4AAAAAAAAAAAABAA4AAAAAAAAAAAAAAA4AAAAAAAAAAAAeAA4AAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_a8x6c")
+
+[node name="Player" parent="." instance=ExtResource("2_2apt5")]
+unique_name_in_owner = true
+position = Vector2(320, 180)
