@@ -22,7 +22,7 @@ func load_level(node: Level):
 	if loaded_level:
 		unload_level()
 	
-	loaded_level = level
+	loaded_level = node
 	level.add_child(node)
 
 
