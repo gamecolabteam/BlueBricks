@@ -1,5 +1,6 @@
-[gd_scene load_steps=42 format=3 uid="uid://du5778kfour3s"]
+[gd_scene load_steps=43 format=3 uid="uid://du5778kfour3s"]
 
+[ext_resource type="Script" uid="uid://rn25mgpdchl0" path="res://scripts/enemies/stationary_enemy.gd" id="1_4wwet"]
 [ext_resource type="Script" uid="uid://bku45qrnovat6" path="res://base/scripts/hurtbox.gd" id="1_5g8xh"]
 [ext_resource type="Script" uid="uid://d1hbbgt6ljqcs" path="res://base/scripts/health.gd" id="2_bwef0"]
 [ext_resource type="Script" uid="uid://cqe1xslh8enkl" path="res://base/scripts/hitbox.gd" id="3_lt78h"]
@@ -7,15 +8,15 @@
 [ext_resource type="Texture2D" uid="uid://g302xeyw41pn" path="res://assets/sprites/slime_hurt.png" id="5_4wwet"]
 [ext_resource type="Texture2D" uid="uid://b030nmqmpa7ka" path="res://assets/sprites/slime_idle.png" id="6_cy6i8"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dadk0"]
-radius = 16.0
-
 [sub_resource type="Resource" id="Resource_5vryo"]
 resource_local_to_scene = true
 script = ExtResource("2_bwef0")
 max_points = 100.0
 points = 100.0
 metadata/_custom_type_script = "uid://d1hbbgt6ljqcs"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dadk0"]
+radius = 16.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b3ral"]
 atlas = ExtResource("4_5vryo")
@@ -266,6 +267,8 @@ animations = [{
 
 [node name="StationaryEnemy" type="CharacterBody2D"]
 z_index = 5
+script = ExtResource("1_4wwet")
+health = SubResource("Resource_5vryo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_dadk0")
