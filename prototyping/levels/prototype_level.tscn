@@ -1,23 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ch6doisvdpt1x"]
+[gd_scene load_steps=7 format=3 uid="uid://ch6doisvdpt1x"]
 
 [ext_resource type="PackedScene" uid="uid://r6a8dhob26ky" path="res://base/scenes/level.tscn" id="1_v40lf"]
+[ext_resource type="Script" uid="uid://bku45qrnovat6" path="res://base/scripts/hurtbox.gd" id="2_u0qag"]
 [ext_resource type="Script" uid="uid://d1hbbgt6ljqcs" path="res://base/scripts/health.gd" id="3_saugi"]
+[ext_resource type="Script" uid="uid://cqe1xslh8enkl" path="res://base/scripts/hitbox.gd" id="4_saugi"]
 
-[sub_resource type="GDScript" id="GDScript_v40lf"]
-resource_name = "test_hurtbox"
-script/source = "extends Hurtbox
-
-
-func _on_health_changed():
-	print(\"Player health: %s\" % health.points)
-
-
-func _ready() -> void:
-	super()
-	health.health_changed.connect(_on_health_changed)
-"
-
-[sub_resource type="Resource" id="Resource_4i56n"]
+[sub_resource type="Resource" id="Resource_u0qag"]
 script = ExtResource("3_saugi")
 max_points = 100.0
 points = 100.0
@@ -29,10 +17,21 @@ radius = 8.0
 [node name="PrototypeLevel" instance=ExtResource("1_v40lf")]
 
 [node name="Hurtbox" type="Area2D" parent="Player" index="2"]
-script = SubResource("GDScript_v40lf")
+script = ExtResource("2_u0qag")
 damage_multiplier = 1.0
-health = SubResource("Resource_4i56n")
+health = SubResource("Resource_u0qag")
 metadata/_custom_type_script = "uid://bku45qrnovat6"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Hurtbox" index="0"]
+shape = SubResource("CircleShape2D_v40lf")
+
+[node name="Hitbox" type="Area2D" parent="Player" index="3"]
+script = ExtResource("4_saugi")
+active = true
+continuous = true
+damage = 30.0
+interval = 1.0
+metadata/_custom_type_script = "uid://cqe1xslh8enkl"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Hitbox" index="0"]
 shape = SubResource("CircleShape2D_v40lf")
