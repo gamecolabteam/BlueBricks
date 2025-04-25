@@ -6,7 +6,7 @@ class_name Level extends Node2D
 const BASE_CENTER: Vector2 = Vector2(320., 180.)
 
 
-@onready var background: Parallax2D = %Background
+@onready var backgrounds: Node2D = $Backgrounds
 @onready var chunk_manager: ChunkManager = $Scroll/ChunkManager
 @onready var player: CharacterBody2D = %Player
 @onready var scroll: Node2D = $Scroll
@@ -28,4 +28,7 @@ func _side_scroll():
 	
 	scroll.position += -motion
 	
-	background.scroll_offset += -motion
+	for bi in backgrounds.get_child_count():
+		var b = backgrounds.get_child(bi) as Parallax2D
+		if b:
+			b.screen_offset += motion
