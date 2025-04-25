@@ -190,9 +190,14 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_amexm")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 14.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -228,7 +233,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kjgj0")
 }],
-"loop": true,
+"loop": false,
 "name": &"hurt",
 "speed": 14.0
 }, {
@@ -284,5 +289,4 @@ shape = SubResource("CircleShape2D_dadk0")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cdx0k")
 animation = &"idle"
-frame_progress = 0.869946
 offset = Vector2(0, -6)
