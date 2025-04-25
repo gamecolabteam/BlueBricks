@@ -265,6 +265,7 @@ animations = [{
 }]
 
 [node name="StationaryEnemy" type="CharacterBody2D"]
+z_index = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_dadk0")
@@ -281,6 +282,10 @@ shape = SubResource("CircleShape2D_dadk0")
 
 [node name="Hitbox" type="Area2D" parent="."]
 script = ExtResource("3_lt78h")
+active = true
+continuous = true
+damage = 10.0
+interval = 1.0
 metadata/_custom_type_script = "uid://cqe1xslh8enkl"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
