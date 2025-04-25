@@ -12,11 +12,6 @@ func _ready() -> void:
 	monitoring = false
 	collision_layer = 1 << 4
 	collision_mask = 0
-	
-	# DEBUG ONLY
-	health.health_changed.connect(
-		func (): print("%s was hurt, health = %s" % [get_parent().name, health.points])
-	)
 
 
 ## Damages [member health] after applying [member damage_multiplier]
