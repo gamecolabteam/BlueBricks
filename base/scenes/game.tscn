@@ -1,20 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://tivoatqsg0us"]
+[gd_scene load_steps=3 format=3 uid="uid://tivoatqsg0us"]
 
 [ext_resource type="Script" uid="uid://bvr3jaqs60q4s" path="res://base/scripts/game.gd" id="1_sjeh3"]
 [ext_resource type="PackedScene" uid="uid://ch6doisvdpt1x" path="res://prototyping/levels/prototype_level.tscn" id="2_uxs03"]
-[ext_resource type="Script" uid="uid://bku45qrnovat6" path="res://base/scripts/hurtbox.gd" id="3_tk4w0"]
-[ext_resource type="Script" path="res://base/scripts/health.gd" id="4_qcid8"]
-[ext_resource type="Script" uid="uid://cqe1xslh8enkl" path="res://base/scripts/hitbox.gd" id="5_kc5jh"]
-
-[sub_resource type="Resource" id="Resource_wl2fk"]
-script = ExtResource("4_qcid8")
-max_points = 1000.0
-points = 1000.0
-metadata/_custom_type_script = "uid://d1hbbgt6ljqcs"
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_p0weg"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_x355d"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_sjeh3")
@@ -22,23 +9,3 @@ script = ExtResource("1_sjeh3")
 [node name="Level" type="Node" parent="."]
 
 [node name="PrototypeLevel" parent="Level" instance=ExtResource("2_uxs03")]
-
-[node name="Hurtbox" type="Area2D" parent="."]
-script = ExtResource("3_tk4w0")
-damage_multiplier = 1.1
-health = SubResource("Resource_wl2fk")
-metadata/_custom_type_script = "uid://bku45qrnovat6"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-shape = SubResource("CircleShape2D_p0weg")
-
-[node name="Hitbox" type="Area2D" parent="."]
-script = ExtResource("5_kc5jh")
-active = true
-continuous = true
-damage = 100.0
-interval = 0.5
-metadata/_custom_type_script = "uid://cqe1xslh8enkl"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("CircleShape2D_x355d")
