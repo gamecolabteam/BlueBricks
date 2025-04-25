@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=4 uid="uid://40ssly63wjbb"]
+[gd_scene load_steps=6 format=4 uid="uid://40ssly63wjbb"]
 
 [ext_resource type="PackedScene" uid="uid://dcbbrxgjnfnu2" path="res://base/scenes/chunk.tscn" id="1_j13c6"]
+[ext_resource type="PackedScene" uid="uid://du5778kfour3s" path="res://enemies/stationary_enemy.tscn" id="2_7wtng"]
+[ext_resource type="Script" uid="uid://d1hbbgt6ljqcs" path="res://base/scripts/health.gd" id="3_xikdb"]
+
+[sub_resource type="Resource" id="Resource_7apok"]
+resource_local_to_scene = true
+script = ExtResource("3_xikdb")
+max_points = 100.0
+points = 100.0
+metadata/_custom_type_script = "uid://d1hbbgt6ljqcs"
+
+[sub_resource type="Resource" id="Resource_yvcxy"]
+resource_local_to_scene = true
+script = ExtResource("3_xikdb")
+max_points = 100.0
+points = 100.0
+metadata/_custom_type_script = "uid://d1hbbgt6ljqcs"
 
 [node name="ThirdChunk" instance=ExtResource("1_j13c6")]
 
@@ -9,3 +25,11 @@ tile_map_data = PackedByteArray("AAATAAoAAQABAAIAAAATAAkAAQABAAIAAAATAAgAAQABAAI
 
 [node name="PlayerSpawnPosition" parent="." index="1"]
 position = Vector2(0, 136)
+
+[node name="StationaryEnemy" parent="." index="2" instance=ExtResource("2_7wtng")]
+position = Vector2(122, 102)
+health = SubResource("Resource_7apok")
+
+[node name="StationaryEnemy2" parent="." index="3" instance=ExtResource("2_7wtng")]
+position = Vector2(-165, 70)
+health = SubResource("Resource_yvcxy")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=4 uid="uid://bog2yw5odq4wx"]
+[gd_scene load_steps=3 format=4 uid="uid://bog2yw5odq4wx"]
 
 [ext_resource type="PackedScene" uid="uid://dcbbrxgjnfnu2" path="res://base/scenes/chunk.tscn" id="1_aggq4"]
+[ext_resource type="PackedScene" uid="uid://du5778kfour3s" path="res://enemies/stationary_enemy.tscn" id="2_hhtd8"]
 
 [node name="FirstChunk" instance=ExtResource("1_aggq4")]
 
@@ -9,3 +10,6 @@ tile_map_data = PackedByteArray("AAATAAoAAQABAAIAAAATAAkAAQABAAIAAAATAAgAAQABAAE
 
 [node name="PlayerSpawnPosition" parent="." index="1"]
 position = Vector2(0, 120)
+
+[node name="StationaryEnemy" parent="." index="2" instance=ExtResource("2_hhtd8")]
+position = Vector2(159, 118)

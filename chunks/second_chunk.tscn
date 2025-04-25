@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=4 uid="uid://dur0cw615i0oa"]
+[gd_scene load_steps=5 format=4 uid="uid://dur0cw615i0oa"]
 
 [ext_resource type="PackedScene" uid="uid://dcbbrxgjnfnu2" path="res://base/scenes/chunk.tscn" id="1_17j1b"]
+[ext_resource type="PackedScene" uid="uid://du5778kfour3s" path="res://enemies/stationary_enemy.tscn" id="2_yxxwv"]
+[ext_resource type="Script" uid="uid://d1hbbgt6ljqcs" path="res://base/scripts/health.gd" id="3_7mhwe"]
+
+[sub_resource type="Resource" id="Resource_ejy26"]
+resource_local_to_scene = true
+script = ExtResource("3_7mhwe")
+max_points = 100.0
+points = 100.0
+metadata/_custom_type_script = "uid://d1hbbgt6ljqcs"
 
 [node name="SecondChunk" instance=ExtResource("1_17j1b")]
 
@@ -9,3 +18,7 @@ tile_map_data = PackedByteArray("AAATAAoAAQABAAIAAAATAAkAAQABAAIAAAATAAgAAQABAAI
 
 [node name="PlayerSpawnPosition" parent="." index="1"]
 position = Vector2(0, 88)
+
+[node name="StationaryEnemy" parent="." index="2" instance=ExtResource("2_yxxwv")]
+position = Vector2(-47, 86)
+health = SubResource("Resource_ejy26")
